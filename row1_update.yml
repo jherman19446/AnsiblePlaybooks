@@ -2,7 +2,7 @@
 - name: Update all row 1 computers
   hosts: row1 
   tasks:
-    - ansible.windows.win_shell: shdcmd.exe /protect disable /u administrator /p sho98ker
+    - ansible.windows.win_shell: shdcmd.exe /protect disable /u administrator /p --------
 
     - ansible.windows.win_updates:
        category_names: "*"
@@ -10,5 +10,5 @@
        reboot: yes
        skip_optional: no
 
-    - ansible.windows.win_shell: shdcmd.exe /protect enable /u administrator /p sho98ker
+    - ansible.windows.win_shell: shdcmd.exe /protect enable /u administrator /p --------
 
