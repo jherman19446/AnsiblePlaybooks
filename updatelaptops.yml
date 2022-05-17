@@ -1,0 +1,12 @@
+---
+- name: update laptops
+  hosts: laptop2.lanslib.local
+  tasks:
+   
+    - ansible.windows.win_shell: shdcmd.exe /protect disable /u administrator /p sho98ker
+
+    - ansible.windows.win_updates:
+       reboot: yes
+       skip_optional: no
+
+    - ansible.windows.win_shell: shdcmd.exe /protect enable /u administrator /p sho98ker

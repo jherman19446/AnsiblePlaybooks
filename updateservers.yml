@@ -1,0 +1,11 @@
+---
+- name: Update Servers
+  hosts: windows
+  tasks:
+    - ansible.windows.win_updates:
+        category_names: "*"
+        reboot: no
+        skip_optional: yes
+        state: installed
+        reject_list:
+          - Xerox - Extension - 7.249.0.0

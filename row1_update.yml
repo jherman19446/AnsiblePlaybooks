@@ -1,0 +1,14 @@
+---
+- name: Update all row 1 computers
+  hosts: row1 
+  tasks:
+    - ansible.windows.win_shell: shdcmd.exe /protect disable /u administrator /p sho98ker
+
+    - ansible.windows.win_updates:
+       category_names: "*"
+       reject_list: "42fb4c42-2f90-4383-8544-d72b616ac50c"
+       reboot: yes
+       skip_optional: no
+
+    - ansible.windows.win_shell: shdcmd.exe /protect enable /u administrator /p sho98ker
+
